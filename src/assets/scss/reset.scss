@@ -1,0 +1,55 @@
+
+/* Устанавливает правила определения размеров блоков */
+html { box-sizing: border-box;
+  *, ::before, ::after { box-sizing: inherit; }
+}
+
+/* Устанавливает максимальную ширину экрана */
+html { width: 100vw; }
+
+/* Отменяет увеличение размера шрифта на мобильных экранах */
+html { text-size-adjust: none; }
+
+/* Обнуляет внешние отступы */
+body,
+h1, h2, h3, h4, h5, p,
+form, fieldset, input, textarea,
+ul, ol { margin: 0; }
+
+/* Обнуляет внутренние отступы */
+fieldset, input, textarea,
+ul, ol { padding: 0; }
+
+/* Устанавливает уменьшенную высоту строк у заголовков, текста и элементов форм */
+h1 { line-height: 1.1; }
+h2, h3, h4, h5 { line-height: 1.2; }
+p { line-height: 1.3; }
+label { line-height: 1; }
+
+/* Управляет переносом текста в заголовках */
+h1, h2, h3, h4, h5 { text-wrap: balance; }
+
+/* Убирает подчёркивание ссылок и задаёт цвет обводки для svg */
+a { text-decoration: none;
+  svg { stroke: currentColor; }
+}
+
+/* Сбрасывает внешний вид и удаляет обводку контура элементов форм */
+fieldset, input, textarea { appearance: none;
+  &:focus { outline-color: transparent; }
+}
+
+/* Удаляет границы элементов форм */
+fieldset, input, textarea { border: none; }
+
+/* Включает наследование шрифтов для элементов форм */
+input, textarea { font-size: inherit; font-family: inherit; }
+
+/* Запрещает изменять размеры текстовой области */
+textarea { resize: none; }
+
+/* Сбрасывает внешний вид списков */
+ul, ol { list-style: none; }
+
+/* Растягивает изображения по ширине блока */
+picture, img { max-width: 100%; display: block; }

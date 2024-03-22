@@ -1,0 +1,19 @@
+
+/* Index page */
+#index {
+  .container {
+    .index {
+      // &__title {}
+    }
+
+    @media screen and (min-width: $tabletWidth) {
+      // .index {}
+    }
+    @media screen and (min-width: $laptopWidth) {
+      // .index {}
+    }
+    @media screen and (min-width: $desktopWidth) {
+      // .index {}
+    }
+  }
+}

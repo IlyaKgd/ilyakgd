@@ -1,0 +1,23 @@
+
+/* Добавляет обязалельные свойства для псевдоэлементов */
+@mixin pseudo($content: '', $position: absolute, $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+}
+
+/* Управляет порядком наложения элементов друг на друга */
+$layers: (
+  menu: 8000,
+  header: 3000,
+  main: 2000,
+  footer: 1000
+);
+
+@mixin z-index($index) {
+  @if map-has-key($layers, $index) {
+    z-index: map-get($layers, $index);
+  } @else {
+    @warn 'The key #{$index} is not in the map `$layers`';
+  }
+}

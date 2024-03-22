@@ -1,0 +1,144 @@
+@charset 'utf-8';
+
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+
+
+html { font-size: $mainFontSize; }
+body { background: $mainBackground; color: $mainColor; font-weight: $mainFontWeight; font-size: 1rem; font-family: $mainFontFamily; line-height: $mainLineHeight; }
+
+#app { position: relative; min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+main { display: flex; flex-direction: column; flex-grow: 1; @include z-index('main'); }
+h1, h2, h3, h4, h5 { font-weight: bold; }
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.375rem; }
+// h3 { font-size: 1.25rem; }
+h4 { font-size: 1.125rem; }
+// h5 { font-size: 1rem; }
+
+p { font-size: .875rem; }
+b { font-weight: bold; }
+i { font-style: italic; }
+
+a { color: $mainLinkColor; transition: all .4s ease-out;
+  &:active, &:focus { color: $mainLinkColor_hover; }
+
+  svg { transition: all .4s ease-out; }
+}
+
+label, input { transition: all .4s ease-out; }
+
+.container { width: $phoneWidth; margin: 0 auto; padding: 1.25rem; display: grid; grid-template-rows: auto; grid-template-columns: repeat(4, 1fr); grid-gap: 1.25rem;
+  .content { grid-column: 1 / 5; }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .container { padding: 2.5rem 1.25rem; grid-template-columns: repeat(8, 1fr); grid-gap: 2.5rem 1.25rem;
+    .content { grid-column: 1 / 9; }
+  }
+}
+@media screen and (min-width: $laptopWidth) {
+  body { scrollbar-width: thin; scrollbar-color: $mainColor $Grey; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { box-shadow: $scrollbarBoxShadow; }
+  ::-webkit-scrollbar-thumb { background: $mainColor; outline: none; }
+  ::-webkit-scrollbar-corner { background: $mainColor; }
+  ::-webkit-resizer { background: $Grey; }
+
+  #app { overflow: visible; }
+
+  a:hover { color: $mainLinkColor_hover; }
+
+  .container { padding: 2.5rem; grid-gap: 2.5rem; }
+}
+@media screen and (min-width: $desktopWidth) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.75rem; }
+  // h3 { font-size: 1.375rem; }
+  h4 { font-size: 1.25rem; }
+  // h5 { font-size: 1.125rem; }
+
+  p { font-size: 1rem; }
+
+  .container { grid-template-columns: repeat(12, 1fr);
+    .content { grid-column: 1 / 13; }
+  }
+}
+
+
+.form {
+  &__line { display: flex; flex-direction: column; }
+
+  &__label { color: $mainColor; font: normal .875rem/1.2 $mainFontFamily; }
+  &__textarea,
+  &__input { width: 100%; border: 1px solid $DarkGrey; border-radius: 4px; background: $White; color: $mainColor; font: normal .875rem/1 $mainFontFamily;
+    &::placeholder { color: $DarkGrey; }
+    &:active, &:focus { border-color: $mainColor; }
+
+    &--success { border-color: $successColor; }
+    &--warning { border-color: $warningColor; }
+    &--error { border-color: $errorColor; }
+  }
+  &__textarea { min-height: 5.5rem; padding: .625rem .75rem; resize: none; }
+  &__input { height: 2.75rem; padding: 0 .75rem; }
+
+  @media screen and (min-width: $desktopWidth) {
+    &__textarea,
+    &__input { font-size: 1rem; }
+    &__textarea { min-height: 6rem; }
+    &__input { height: 3rem; }
+  }
+}
+
+.button {
+  a { width: 100%; height: 2.75rem; border: 1px solid $mainLinkColor; border-radius: 4px; padding: 0 2rem; background: $mainLinkColor; color: $White; font: bold .875rem/1 $mainFontFamily; text-align: center; white-space: nowrap; display: inline-flex; justify-content: center; align-items: center; }
+
+  @media screen and (min-width: $desktopWidth) {
+    a { width: auto; height: 3rem; font-size: 1rem;
+      &:hover { border-color: $mainLinkColor_hover; background: $mainLinkColor_hover; }
+    }
+  }
+}
+
+
+header { @include z-index('header');
+  .container { height: 6rem; padding: 0 1rem;
+    .header { display: flex; justify-content: space-between; align-items: center;
+      &-logo a { color: $mainColor; font-weight: bold; font-size: 1.375rem; }
+    }
+
+    @media screen and (min-width: $tabletWidth) {
+      // .header {}
+    }
+    @media screen and (min-width: $desktopWidth) { padding: 0 2rem;
+      .header {
+        &-logo a { font-size: 1.75rem;
+          &:hover { color: $mainLinkColor_hover; }
+        }
+      }
+    }
+  }
+}
+
+main { display: flex; flex-direction: column; flex-grow: 1; @include z-index('main'); }
+
+footer { @include z-index('footer');
+  .container {
+    // .footer {}
+
+    @media screen and (min-width: $tabletWidth) {
+      // .footer {}
+    }
+    @media screen and (min-width: $desktopWidth) {
+      // .footer {}
+    }
+  }
+}
+
+
+@import 'pages/index';

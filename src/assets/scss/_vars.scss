@@ -1,0 +1,45 @@
+
+/* Контрольные точки */
+$phoneWidth                : 100%;
+$tabletWidth               : 768px;
+$laptopWidth               : 1024px;
+$desktopWidth              : 1280px;
+
+/* Фирменные цвета */
+$Black                     : #000000;
+$WoodlandGreen             : #132514;
+$WoodlandGrey              : #354435;
+$DarkGrey                  : #596659;
+$Grey                      : #7f8a7f;
+$LightGrey                 : #a8b0a8;
+$PaleGrey                  : #d3d7d3;
+$MatteWhite                : #fdfefd;
+$White                     : #ffffff;
+
+$DarkBlue                  : #1997bb;
+$Blue                      : #00b8e5;
+$DarkGreen                 : #1cb244;
+$Malachite                 : #0bda51;
+$LightGreen                : #85e88c;
+$PaleGreen                 : #c6f5c5;
+$Yellow                    : #b9e500;
+$Red                       : #e50023;
+
+/* Параметры шрифтов */
+$mainFontWeight            : normal;
+$mainFontSize              : 16px;
+$mainFontFamily            : Arial, sans-serif;
+$mainLineHeight            : 1.4;
+
+/* Основные цвета */
+$mainColor                 : $Black;
+$mainBackground            : $White;
+$mainLinkColor             : $Blue;
+$mainLinkColor_hover       : $DarkBlue;
+
+$successColor              : $DarkGreen;
+$warningColor              : $Yellow;
+$errorColor                : $Red;
+
+/* Тени */
+$scrollbarBoxShadow        : inset 0 0 1px rgba($Black, .64);
